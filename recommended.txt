@@ -1,0 +1,5 @@
+# Examples and tests
+pytest
+scipy
+numpy
+matplotlib
