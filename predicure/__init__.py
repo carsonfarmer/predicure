@@ -9,4 +9,4 @@ Init module for predicure.
 # Copyright © 2017 Carson J. Q. Farmer <carson@set.gl>
 # All rights reserved. BSD-2 Licensed.
 
-from .base import SemiMarkov
+from .base import SemiMarkov, MarkovSketch

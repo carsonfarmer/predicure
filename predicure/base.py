@@ -128,7 +128,7 @@ class SemiMarkov:
         return state in self.transitions
 
     def __iter__(self):
-        return self.transitions.items()
+        return iter(self.transitions.items())
 
     @property
     def states(self):
@@ -144,7 +144,7 @@ class SemiMarkov:
             ret.add(s1)
             for s2 in self.transitions[s1]:
                 ret.add(s2)
-        return ret
+        return {i for i in ret if i is not None}
 
     def clone(self):
         '''Return a deep copy of this model.'''
@@ -396,7 +396,7 @@ class MarkovSketch:
         self.model = SemiMarkov()
         self.npoints = 0
         self.current_state = None
-        self.current_time = None
+        self.current_time = 0
 
     def __add__(self, event):
         '''Add an event to the sketch.
